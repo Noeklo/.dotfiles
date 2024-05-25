@@ -15,12 +15,12 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 vim.opt.rtp:prepend(lazypath)
 
--- if not vim.fn.executable("nvr") then
---     vim.api.nvim_command("!pip3 install --user neovim-remote")
--- end
---
--- local result = vim.fn.system("pip3 show pynvim 2> /dev/null")
--- if result == "" then vim.api.nvim_command("!pip3 install --user pynvim") end
+ if not vim.fn.executable("nvr") then
+     vim.api.nvim_command("!pip3 install --user neovim-remote")
+ end
+
+ local result = vim.fn.system("pip3 show pynvim 2> /dev/null")
+ if result == "" then vim.api.nvim_command("!pip3 install --user pynvim") end
 
 require("lazy").setup({
     {
