@@ -35,6 +35,8 @@ neovim
 network-manager-applet
 networkmanager
 nitrogen
+nvidia
+nvidia-settings
 openresolv
 otf-codenewroman-nerd
 pavucontrol

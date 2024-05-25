@@ -100,11 +100,11 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
 
 #    layout.Columns(border_focus=["#215578", "#215578"],border_normal=["#404040", "#404040"], border_width=4, margin=10),
     
-#    layout.Columns(border_focus=["#215578", "#215578"],border_normal=["#404040", "#404040"], border_width=8, margin=16),
+    layout.Columns(border_focus=["#215578", "#215578"],border_normal=["#404040", "#404040"], border_width=8, margin=16),
     
     layout.Max(),
     # Try more layouts by unleashing below layouts.
@@ -122,10 +122,10 @@ layouts = [
 
 widget_defaults = dict(
     font="sans",
-    fontsize=12,
-    padding=3,
-#    fontsize=28,
-#    padding=9,
+#    fontsize=12,
+#    padding=3,
+    fontsize=28,
+    padding=9,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -148,13 +148,12 @@ screens = [
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 #widget.Systray(),
-                widget.Battery(format="{char} {percent:2.0%}"),
                 #widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                 widget.Clock(format="%d-%m-%Y %a %H:%M"),
                 #widget.QuickExit(),
             ],
-            24,
-            #48,
+            #24,
+            48,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
