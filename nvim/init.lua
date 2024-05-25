@@ -57,7 +57,7 @@ require("lazy").setup({
                 [[  █████  ░░█████░░██████ ░░██████     ░░███      █████ █████░███ █████ ]],
                 [[ ░░░░░    ░░░░░  ░░░░░░   ░░░░░░       ░░░      ░░░░░ ░░░░░ ░░░ ░░░░░  ]],
                 [[                                                                       ]],
-                [[                     λ it be like that sometimes λ                     ]]
+                [[   λ makt! Över varje skälvande kreatur och över hela myrstacken! λ    ]]
             }
 
             dashboard.section.buttons.val = {
