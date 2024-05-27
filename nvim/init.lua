@@ -630,7 +630,8 @@ vim.g.vimtex_indent_on_ampersands = 0
 -- Other settings
 vim.g.neoformat_try_formatprg = 1
 vim.g.latexindent_opt = "-m"
-vim.g.python3_host_prog = "~/.asdf/shims/python3"
+--vim.g.python3_host_prog = "~/.asdf/shims/python3"
+vim.g.python3_host_prog = "/home/noel/repos/venvMain/bin/python3"
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.netrw_banner = 0
