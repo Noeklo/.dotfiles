@@ -40,7 +40,8 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    #Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([mod], "space", lazy.spawn("rofi -show drun"), desc="Opens rofi"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
@@ -122,7 +123,7 @@ layouts = [
 
 widget_defaults = dict(
     font="sans",
-    fontsize=12,
+    fontsize=14,
     padding=3,
 #    fontsize=28,
 #    padding=9,
@@ -133,7 +134,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Spacer(length=20),
+                widget.Spacer(length=10),
                 #widget.CurrentLayout(),
                 widget.GroupBox(),
                 widget.Prompt(),
@@ -150,12 +151,14 @@ screens = [
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 #widget.Systray(),
-                widget.Battery(format="{char} {percent:2.0%}"),
+                #widget.Battery(format="{char} {percent:2.0%}"),
+                widget.Battery(format="{percent:2.0%}"),
+                widget.BatteryIcon(theme_path="~/.config/qtile/battery_icons"),
                 #widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                 #widget.Clock(format="%d-%m-%Y %a %H:%M"),
                 widget.Clock(format=" %a %b %d %H:%M"),
                 #widget.QuickExit(),
-                widget.Spacer(length=20),
+                widget.Spacer(length=10),
             ],
             24,
             #48,
