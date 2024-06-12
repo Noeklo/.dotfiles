@@ -133,10 +133,12 @@ screens = [
     Screen(
         top=bar.Bar(
             [
+                widget.Spacer(length=20),
                 #widget.CurrentLayout(),
                 widget.GroupBox(),
                 widget.Prompt(),
-                widget.WindowName(),
+                #widget.WindowName(),
+                widget.Spacer(),
                 widget.Chord(
                     chords_colors={
                         "launch": ("#ff0000", "#ffffff"),
@@ -150,8 +152,10 @@ screens = [
                 #widget.Systray(),
                 widget.Battery(format="{char} {percent:2.0%}"),
                 #widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.Clock(format="%d-%m-%Y %a %H:%M"),
+                #widget.Clock(format="%d-%m-%Y %a %H:%M"),
+                widget.Clock(format=" %a %b %d %H:%M"),
                 #widget.QuickExit(),
+                widget.Spacer(length=20),
             ],
             24,
             #48,

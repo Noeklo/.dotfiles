@@ -147,7 +147,7 @@ require("lazy").setup({
     }, {"numToStr/Comment.nvim"}, -- comment
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}, -- :TSInstallFromGrammar
     {"nvim-treesitter/nvim-treesitter-textobjects", event = "InsertEnter"}, -- TS objects
-    {"JoosepAlviste/nvim-ts-context-commentstring"}, -- use TS for comment.nvim
+--    {"JoosepAlviste/nvim-ts-context-commentstring"}, -- use TS for comment.nvim
     {"nvim-treesitter/playground", lazy = true, cmd = "TSPlaygroundToggle"}, -- playing around with treesitter
     {"danymat/neogen", config = function() require("neogen").setup({}) end}, {
         -- generate doc comment
@@ -226,7 +226,7 @@ require("lazy").setup({
         end
     }, {"windwp/nvim-autopairs"}, -- autopairs
     {"uga-rosa/ccc.nvim"}, -- color highlighting
-    {"wellle/targets.vim"}, -- adds more targets like [ or ,
+    --{"wellle/targets.vim"}, -- adds more targets like [ or ,
     {"nvim-neorg/neorg"},
     {
         "edluffy/hologram.nvim",
@@ -924,12 +924,12 @@ autopairs.add_rules({
 autopairs.get_rule("`").not_filetypes = {"tex", "latex"}
 autopairs.get_rule("'")[1].not_filetypes = {"tex", "latex", "rust"}
 
-require("Comment").setup({
-    pre_hook = function()
-        return
-            require("ts_context_commentstring.internal").calculate_commentstring()
-    end
-})
+--require("Comment").setup({
+--    pre_hook = function()
+--        return
+--            require("ts_context_commentstring.internal").calculate_commentstring()
+--    end
+--})
 
 -- https://github-wiki-see.page/m/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes
 local actions = require("telescope.actions")
@@ -1032,7 +1032,7 @@ require("nvim-treesitter.configs").setup({
         persist_queries = false -- Whether the query persists across vim sessions
     },
     indent = {enable = true, disable = {"python"}},
-    context_commentstring = {enable = true},
+--    context_commentstring = {enable = true},
     textobjects = {
         move = {
             enable = true,
