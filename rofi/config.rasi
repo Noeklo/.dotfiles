@@ -3,11 +3,22 @@
  * User                 : LR-Tech               
  * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
  *******************************************************************************/
+ configuration {
+
+    drun-display-format: "{icon} {name}";
+    show-icons: true;
+    icon-theme: "Papirus";
+ }
+
+ @theme "/dev/null"
 
 * {
-    font:   "Montserrat 12";
+    /**font:   "Montserrat 12";**/
+    font:   "Montserrat 20";
 
     bg0:    #242424E6;
+    bg0:    black;
+    /**bg0:    #0E1018; **/
     bg1:    #7E7E7E80;
     bg2:    #0860f2E6;
 
@@ -27,20 +38,29 @@ window {
     background-color:   @bg0;
 
     location:       center;
-    width:          640;
+    /**width:          640;**/
+    width:          1280;
+    /**border: 4px; 
+    border-color: #215578; 
+    padding: 16px;**/
 }
 
 inputbar {
-    font:       "Montserrat 20";
+    /**font:       "Montserrat 20";
     padding:    12px;
-    spacing:    12px;
+    spacing:    12px;**/
+
+    font:       "Montserrat 30";
+    padding:    20px;
+    spacing:    20px;
     children:   [ icon-search, entry ];
 }
 
 icon-search {
     expand:     false;
     filename:   "search";
-    size: 28px;
+    /**size: 28px;**/
+    size: 56px;
 }
 
 icon-search, entry, element-icon, element-text {
@@ -61,7 +81,8 @@ message {
 }
 
 textbox {
-    padding:    8px 24px;
+    /**padding:    8px 24px;**/
+    padding:    16px 48px;
 }
 
 listview {
@@ -74,10 +95,12 @@ listview {
 }
 
 element {
-    padding:            8px 16px;
-    spacing:            16px;
-    /**background-color:   transparent;**/
-    background-color:   @bg0;
+    /**padding:            8px 16px;
+    spacing:            16px;**/
+
+    padding:            12px 24px;
+    spacing:            24px;
+    background-color:   transparent;
 }
 
 element normal active {
