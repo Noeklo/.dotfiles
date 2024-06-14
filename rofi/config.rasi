@@ -116,6 +116,17 @@ element-icon {
     size:   1em;
 }
 
+element-text selected active, element-text selected normal{
+    text-color: inherit;
+    background-color: @bg2;
+}
+
+element-icon selected active, element-icon selected normal{
+    text-color: inherit;
+    background-color: @bg2;
+}
+
 element-text {
     text-color: inherit;
 }
+
