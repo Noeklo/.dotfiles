@@ -29,6 +29,30 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
+import os
+
+def get_screen_resolution():
+    stream = os.popen('xrandr | grep "*" | awk \'{print $1}\'')
+    resolution = stream.read().strip()
+    return resolution
+
+resolution = get_screen_resolution()
+
+#Define widget defaults based on resolution
+def get_widget_defaults():
+    if resolution == "1366x768":
+        return dict(
+                font="sans",
+                fontsize=14,
+                padding=3
+                )
+    else:
+        return dict(
+                font="sans",
+                fontsize=28,
+                padding=9
+                )
+
 mod = "mod4"
 terminal = guess_terminal()
 
@@ -71,7 +95,7 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -101,7 +125,7 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+        (layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4) if "1366x768" else layout.Columns(border_focus=["#215578", "#215578"],border_normal=["#404040", "#404040"], border_width=8, margin=16) ),
 
 #    layout.Columns(border_focus=["#215578", "#215578"],border_normal=["#404040", "#404040"], border_width=4, margin=10),
     
@@ -121,13 +145,15 @@ layouts = [
     # layout.Zoomy(),
 ]
 
-widget_defaults = dict(
-    font="sans",
-    fontsize=14,
-    padding=3,
+widget_defaults = get_widget_defaults()
+
+#widget_defaults = dict(
+#    font="sans",
+##    fontsize=12,
+##    padding=3,
 #    fontsize=28,
 #    padding=9,
-)
+#)
 extension_defaults = widget_defaults.copy()
 
 screens = [
@@ -160,7 +186,7 @@ screens = [
                 #widget.QuickExit(),
                 widget.Spacer(length=10),
             ],
-            24,
+            (24 if resolution == "1366x768" else 48),
             #48,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
