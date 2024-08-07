@@ -182,7 +182,7 @@ screens = [
                 widget.BatteryIcon(theme_path="~/.config/qtile/battery_icons"),
                 #widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                 #widget.Clock(format="%d-%m-%Y %a %H:%M"),
-                widget.Clock(format=" %a %b %d %H:%M"),
+                widget.Clock(format=" %a %d %b %H:%M"),
                 #widget.QuickExit(),
                 widget.Spacer(length=10),
             ],
