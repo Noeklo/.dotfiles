@@ -6,3 +6,5 @@ end
 
 set -g fish_key_bindings hybrid_bindings
 set fish_key_bindings fish_user_key_bindings
+
+fish_add_path /home/noel/.spicetify
