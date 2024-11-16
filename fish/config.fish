@@ -1,5 +1,9 @@
 alias vim='nvim'
 
+function vim
+    nvim $argv
+end
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
